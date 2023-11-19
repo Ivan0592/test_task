@@ -1,1 +1,3 @@
-print("I wrote it from Nano")
+a = input()
+b = (a + 4 - 1) // 4
+print(b)
