@@ -1,5 +1,5 @@
-# num = 5
-# print(num)
+# num_list = 5
+# print(num_list)
 
 # print("Hello world")
 # print(20%5)

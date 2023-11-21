@@ -13,8 +13,6 @@
 #     x += d
 
 
-
-
 # дорешать
 # while x < n:
 #     print(x)
@@ -30,38 +28,30 @@
 #         print(x)
 #         x += 1
 
+n = int(input())
+# num_list = 0  # start
+# while num_list <= n:  # stop
+#     print(num_list)
+#     num_list += 2 # step
 
-    # s = s + x
-    # x = x + d
-    # s += x
-    # x += d
-
-def x (n):
-    return [x for x in range(0, n+1, 2)]
-print(x(int(input())))
-
+for num in range(0, n + 1, 2):
+    print(num)
 
 
 
+# s = s + x
+# x = x + d
+# s += x
+# x += d
 
+# def x(n: int) -> object:
+#     return [x for x in range(0, n + 1, 2)]
+#
+#
+# val = x(12)
+#
+# print(x(int(input())))
+# print(type(x))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# arr = {0, 1, 2, 3, 6, 1, 3}
+# print(arr, type(arr))
