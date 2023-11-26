@@ -55,3 +55,5 @@ for num in range(0, n + 1, 2):
 
 # arr = {0, 1, 2, 3, 6, 1, 3}
 # print(arr, type(arr))
+
+
