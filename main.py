@@ -14,9 +14,14 @@ import fastapi
 
 from fastapi import FastAPI
 from enum import Enum
+import logging
 
 
-app = FastAPI()
+app = FastAPI(debug=True)
+
+#TODO: Вынести логирование в отдельный файл
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 class Role(str, Enum):
     admin = 'admin'
@@ -26,6 +31,7 @@ class Role(str, Enum):
 
 @app.get("/user/ivan")
 async def root_admin():
+    logger.info('You are enter as admin')
     return {"msg": "You are enter as admin"}
 
 
@@ -51,3 +57,24 @@ async def output_name_num_time(num: int, name: str):
     name = name * num
     print(num, type(num), name, type(name))
     return {"msg": f"{name}"}
+
+
+
+@app.get("/")
+async def root():
+    return {'Hello!'}
+
+from pydantic import BaseModel
+from datetime import date
+
+class Contact(BaseModel):
+    name: str
+    surname: str
+    age: int
+    registration_data: date
+    phone_number: str
+
+@app.post('/')
+async def root_get_contacts(contact: Contact):
+    logger.info(contact)
+    return contact
